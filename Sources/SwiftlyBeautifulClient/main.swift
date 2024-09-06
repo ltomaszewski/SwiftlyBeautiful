@@ -12,11 +12,22 @@ class Model {
     let abecadlo: String
     let lol: Int
     let kkkk: String
+    let subModels: [SubModel]
     
     init(abecadlo: String, lol: Int) {
         self.abecadlo = abecadlo
         self.lol = lol
         self.kkkk = "ABBB"
+        self.subModels = [.init(subText: "LOL")]
+    }
+}
+
+@Printable
+class SubModel {
+    let subText: String
+    
+    init(subText: String) {
+        self.subText = subText
     }
 }
 
