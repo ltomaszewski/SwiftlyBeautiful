@@ -13,6 +13,7 @@ import SwiftSyntaxMacros
 struct SwiftlyBeautifulPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         StringifyMacro.self,
-        PrintableMacro.self
+        PrintableMacro.self,
+        SwiftDataCRUDMacro.self
     ]
 }
