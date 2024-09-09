@@ -42,6 +42,7 @@ print(testModel.description)
 import Foundation
 
 // Mock ModelContext for testing purposes
+@available(iOS 17, macOS 14, *)
 class ModelContext {
     private var storage: [UUID: SleepSession] = [:]
 
@@ -71,16 +72,17 @@ class ModelContext {
     }
 }
 
-// Mock Predicate type for SleepSession
-struct Predicate<T> {
-    let filter: (T) -> Bool
-}
+//// Mock Predicate type for SleepSession
+//struct Predicate<T> {
+//    let filter: (T) -> Bool
+//}
 
 // Mock SortDescriptor for SleepSession
 struct SortDescriptor<T> {
     let compare: (T, T) -> Bool
 }
 
+@available(iOS 17, macOS 14, *)
 struct FetchDescriptor<T> {
     var predicate: Predicate<T>?
     var sortBy: [SortDescriptor<T>]?
