@@ -19,7 +19,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0"),
+        .package(url: "https://github.com/sjavora/swift-syntax-xcframeworks.git", from: "510.0.1"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -28,8 +28,7 @@ let package = Package(
         .macro(
             name: "SwiftlyBeautifulMacros",
             dependencies: [
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
+                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks")
             ]
         ),
 
@@ -44,7 +43,7 @@ let package = Package(
             name: "SwiftlyBeautifulTests",
             dependencies: [
                 "SwiftlyBeautifulMacros",
-                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
             ]
         ),
     ]
