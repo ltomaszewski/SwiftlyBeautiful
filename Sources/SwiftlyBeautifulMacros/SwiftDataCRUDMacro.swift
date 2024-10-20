@@ -46,7 +46,7 @@ public struct SwiftDataCRUDMacro: ExtensionMacro {
         // Define the update function
         let updateFunction = """
             @available(iOS 17, macOS 14, *)
-            static func update(id: UUID, updateClosure: (inout \(className)) -> Void, context: ModelContext) throws {
+            static func update(id: String, updateClosure: (inout \(className)) -> Void, context: ModelContext) throws {
                 let predicate: Predicate<\(className)> = #Predicate<\(className)> { $0.id == id }
                 let fetchDescriptor = FetchDescriptor<\(className)>(predicate: predicate)
 
